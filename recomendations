@@ -1,0 +1,20 @@
+
+## Sugestões de Melhorias
+
+Embora o código atual seja funcional e bem-estruturado para fins educacionais, ele poderia ser aprimorado com as seguintes funcionalidades:
+
+1.  **Carregamento Inicial dos Dados:** Atualmente, os dados só são carregados após a primeira busca. Seria interessante exibir todos os cards assim que a página carrega, chamando a função `iniciarBusca()` (ou uma similar) sem um termo de busca logo no início.
+
+2.  **Busca em Tempo Real:** Em vez de esperar o clique no botão "Buscar", a busca poderia ser acionada automaticamente enquanto o usuário digita, utilizando o evento `onkeyup` ou `oninput` no campo de busca.
+
+3.  **Filtragem por Tags:** O `data.json` contém um campo `"tags"`. Uma funcionalidade avançada seria permitir que o usuário clicasse em tags para filtrar as tecnologias (por exemplo, clicar em "frontend" para ver apenas ferramentas dessa categoria).
+
+4.  **Feedback de "Nenhum Resultado":** Se a busca do usuário não encontrar nenhum resultado, a tela simplesmente fica em branco. Seria mais amigável exibir uma mensagem como "Nenhum resultado encontrado para a sua busca."
+
+5.  **Tratamento de Erros:** O código não possui tratamento para o caso de o arquivo `data.json` não ser encontrado ou estiver mal formatado. O uso de um bloco `try...catch` em volta do `fetch` poderia capturar esses erros e exibir uma mensagem amigável.
+
+6.  **Modularização do JavaScript:** Para projetos maiores, o `script.js` poderia ser dividido em módulos (ESM - ECMAScript Modules), separando a lógica de busca da lógica de renderização, por exemplo.
+
+7.  **Melhorias de Acessibilidade (a11y):**
+    - Adicionar atributos ARIA para indicar o status da busca (por exemplo, `aria-live` na região dos resultados).
+    - Garantir que a navegação via teclado seja fluida, especialmente o foco nos resultados da busca.
